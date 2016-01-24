@@ -2,11 +2,10 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Catalog</h1>
+<h1 class="store_header">Catalog</h1>
 
-<% @products.each %>
 <% @products.each do |product| %>
-  <div class="entry">
+  <div class="store_entry">
     <%= image_tag(product.image_url) %>
     <h3><%= product.title %></h3>
     <%= sanitize(product.description) %>
