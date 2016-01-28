@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OnlineStore</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Online Store</title>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || Bookshelf %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Questions</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
 
-<%= yield %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
 </html>
